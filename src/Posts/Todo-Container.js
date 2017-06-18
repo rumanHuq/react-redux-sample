@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router';
 import { fetchTodoList } from './Action';
 import {
   Table,
@@ -43,9 +44,15 @@ class TodoContainer extends Component {
     return todos.map(todo => {
       return (
         <TableRow key={todo.id}>
-          <TableRowColumn>{todo.id}</TableRowColumn>
-          <TableRowColumn>{todo.userId}</TableRowColumn>
-          <TableRowColumn>{todo.title}</TableRowColumn>
+          <TableRowColumn>
+            <Link to={`/posts/${todo.id}`}>{todo.id}</Link>
+          </TableRowColumn>
+          <TableRowColumn>
+            <Link to={`/posts/${todo.id}`}>{todo.userId}</Link>
+          </TableRowColumn>
+          <TableRowColumn>
+            <Link to={`/posts/${todo.id}`}>{todo.title}</Link>
+          </TableRowColumn>
         </TableRow>
       );
     });
