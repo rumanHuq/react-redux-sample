@@ -6,7 +6,7 @@ export default class Layout extends Component {
     return (
       <div>
         <header>
-          <h2>Wooah!</h2>
+          <h2>Wooah!!</h2>
         </header>
         <section>
           {this.props.children}
